@@ -5,7 +5,7 @@
 * The problem we are trying to solve is removing third party involvement such as brokers. This prevents the property owner and potential tenant from paying extra payment.
 -----------------
 # Business feature #1 
-*  Owner of a building will be able to to post listings(New places for rent and/or for sale) on the app, delete old listings, update information on the building(eg-price) and perform read operation.
+*  Owner of a building will be able to to post listings(New places for rent) on the app, delete old listings, update information on the building(eg-price) and perform read operation.
 -----------------
 
 # Buisness feature #2 
