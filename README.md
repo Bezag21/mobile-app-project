@@ -14,7 +14,9 @@
 # Authentication feature
 
 * Signup 
+//to create an account as a new user so that you can log in later with your credentials  by passing the new user's email address, password, 
 * Login/Logout 
+//
 * Change username (or password) 
 * Delete Account 
  -----------------
