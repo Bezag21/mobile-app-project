@@ -15,10 +15,13 @@
 
 * Signup
  
-//to create an account as a new user so that you can log in later with your credentials  by passing the new user's email address, password, 
+// to create an account as a new user so that you can log in later with your credentials  by passing the new user's email address, password. 
 * Login/Logout 
-//
+
+//  The server looks up the username in the database, hashes the supplied login password, and compares it to the previously hashed password in the database. If it doesn't check out, we may deny them access by sending a 401 status code and ending the request.
 * Change username (or password) 
+
+// Asks the user to enter old password for verification, the user has at maximum three tries to enter correct old password; if not the password will not be changed and a message Box will be shown for the user. If user entered correct old password then he is authenticated to changer his password and asked to enter new password and confirming the new. Once if confirmed correctly the old password will be changed to the new one and a message box will be shown if wrong confirmation the old password will not be changed and a message box will be shown.
 * Delete Account 
  -----------------
 # Authorization feature
