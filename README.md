@@ -32,7 +32,8 @@
 * Removing Roles from the system 
 -----------------
 
-
+# Edited/added feature 
+*Keeping track of inspection dates and  address owner can update dates and such infos, perform read operation, delete informations once the place is inspected and update the list with upcoming inspections
 * 
 Group name            |       ID
 -----------------     |       -----------
