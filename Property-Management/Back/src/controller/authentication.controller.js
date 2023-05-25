@@ -3,12 +3,10 @@ const jwt = require('jsonwebtoken');
 const {signupValidation} = require('../validation/signupValidation');
 const {loginValidation} = require('../validation/loginValidation');
 
+// validating signup form input
 
 const signUp =  async (req, res) => {
     
-    // validating signup form input
-    
-   
     const {error} = signupValidation(req.body);
     if(error) return res.status(400).send({message: error.details[0].message});
 
@@ -39,10 +37,7 @@ const signUp =  async (req, res) => {
    
 
     
-
-   
-
-//login logics found in here
+//login 
 const logIn = async (req, res) => {
 
     const {error} =  loginValidation(req.body)
