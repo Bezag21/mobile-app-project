@@ -29,8 +29,6 @@ const userSchema = new mongoose.Schema({
         enum: ['user', 'admin']
     },
 
-     
-
 });
 
 // Hash password before save in DB
@@ -44,6 +42,4 @@ userSchema.statics.encryptPassword = async (password) => {
 userSchema.statics.comparePassword = async (password, receivedPassword) => {
     return await bcrypt.compare(password, receivedPassword)
 };
-
-
 module.exports = mongoose.model('User', userSchema);
