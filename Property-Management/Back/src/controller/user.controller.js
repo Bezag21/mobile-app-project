@@ -2,12 +2,11 @@
 const User = require("../models/user");
 
 
-
 const edit_password = async (req, res) => {
   var user = await User.findById(req.userId);
   if (!user) {
     res.status(401).json({
-      message: "no such user",
+      message: "no user found",
     });
     return;
   }
