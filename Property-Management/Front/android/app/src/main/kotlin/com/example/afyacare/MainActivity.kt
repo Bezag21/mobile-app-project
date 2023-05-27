@@ -1,4 +1,4 @@
-package com.example.afyacare
+package com.example.landlorder
 
 import io.flutter.embedding.android.FlutterActivity
 
