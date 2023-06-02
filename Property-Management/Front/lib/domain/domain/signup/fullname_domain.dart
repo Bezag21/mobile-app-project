@@ -16,3 +16,5 @@ class FullName extends Equatable {
   @override
   List<Object> get props => [fullName!];
 }
+'The FullName class has one required string property: fullName. 
+The constructor takes this property as a named parameter and requires it to be provided when creating an instance of the class.'
