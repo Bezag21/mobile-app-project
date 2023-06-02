@@ -5,7 +5,7 @@ class Screen {
   String login = '/login';
   String signup = '/signup';
   String mainscreen = '/mainscreen';
-  String ListOfUpload ='/ListOfUpload';
+  
   String search = "/search";
   String adminScreen = "/adminScreen";
 

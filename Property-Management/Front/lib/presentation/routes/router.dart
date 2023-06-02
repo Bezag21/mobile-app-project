@@ -1,8 +1,6 @@
 //import 'package:property/application/signup_form/bloc/signup_bloc.dart';
 //import 'package:property/domain/inspection/inspection_Domain.dart';
 
-import 'package:property/presentation/pages/main/home.dart';
-
 import '../../../application/auth/bloc/authentication_bloc.dart';
 import '../../../infrastructure/core/sharedPref.dart';
 import '../../../presentation/pages/admin/adminscreen.dart';
@@ -17,7 +15,6 @@ import '../../../presentation/routes/path.dart';
 import '../pages/admin/add_inspection.dart';
 //import '../pages/admin/inspection_detail.dart';
 import '../pages/admin/list_of_inspections.dart';
-import '../pages/admin/listing_list.dart';
 import '../pages/signup/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
@@ -47,8 +44,7 @@ class RouterMain extends StatelessWidget {
         state.location != Screen().login &&
         state.location != Screen().mainscreen 
        ) {
-     // return Screen().splashScreen;
-    return Screen().ListOfUpload;
+      return Screen().splashScreen;
     } else if (authenticationBloc.state is AuthenticationNotAuthenticated &&
         state.location != Screen().signup &&
         state.location != Screen().login) {
@@ -134,11 +130,6 @@ class RouterMain extends StatelessWidget {
           builder: (BuildContext context, GoRouterState state) =>
               const ListOfInspection(),
         ),
-        // GoRoute(
-        //   path: Screen().ListOfUpload,
-        //   builder: (BuildContext context, GoRouterState state) =>
-        //       const ListOfUpload(),
-        // ),
         GoRoute(
           path: Screen().splashScreen,
           builder: (BuildContext context, GoRouterState state) =>
