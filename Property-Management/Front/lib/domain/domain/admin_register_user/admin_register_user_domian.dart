@@ -16,3 +16,5 @@ class AddUserDomainRequest {
 
       };
 }
+'The purpose of this class is to simplify the process of creating a request payload for adding a new user in a specific domain. 
+The toJson() method is used to convert the instance of this class into a JSON object, which can be used as the request payload for an API call.'
