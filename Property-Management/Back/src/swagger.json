@@ -1,0 +1,199 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": " Space Upload",
+    "description": "Space Upload",
+    "license": {
+      "name": "MIT",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "space",
+      "description": "space API"
+    }
+  ],
+  "schemes": ["http"],
+  "consumes": ["application/json"],
+  "produces": ["application/json"],
+  "paths": {
+    "/api/space": {
+      "get": {
+        "tags": ["space"],
+        "summary": "Get all space",
+        "parameters": [
+          {
+            "name": "spaceName",
+            "in": "query",
+            "required": false,
+            "description": "space Name",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ServiceResponse"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": ["space"],
+        "summary": "Create space API",
+        "parameters": [
+          {
+            "name": "spaceName",
+            "in": "formData",
+            "description": "space Name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "spaceDescription",
+            "in": "formData",
+            "description": "space Description",
+            "type": "string"
+          },
+          {
+            "name": "spacePrice",
+            "in": "formData",
+            "description": "space Price",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "spaceImage",
+            "in": "formData",
+            "description": "space Image",
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ServiceResponse"
+            }
+          }
+        }
+      }
+    },
+    "/api/space/{id}": {
+      "parameters": [
+        {
+          "name": "id",
+          "in": "path",
+          "required": true,
+          "description": "space Id",
+          "type": "string"
+        }
+      ],
+      "get": {
+        "tags": ["space"],
+        "summary": "space Details based on space Id",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ServiceResponse"
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": ["space"],
+        "summary": "Update space API",
+        "parameters": [
+          {
+            "name": "spaceName",
+            "in": "formData",
+            "description": "space Name",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "spaceDescription",
+            "in": "formData",
+            "description": "space Description",
+            "type": "string"
+          },
+          {
+            "name": "spacePrice",
+            "in": "formData",
+            "description": "space Price",
+            "required": true,
+            "type": "integer"
+          },
+          {
+            "name": "spaceImage",
+            "in": "formData",
+            "description": "space Image",
+            "type": "file"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ServiceResponse"
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": ["space"],
+        "summary": "Delete space API",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ServiceResponse"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "space": {
+      "required": ["spaceName", "_id", "spacePrice"],
+      "properties": {
+        "_id": {
+          "type": "integer",
+          "uniqueItems": true
+        },
+        "spaceName": {
+          "type": "string"
+        },
+        "spaceDescription": {
+          "type": "string"
+        },
+        "spacePrice": {
+          "type": "number"
+        },
+        "spaceImage": {
+          "type": "string"
+        }
+      }
+    },
+    "ServiceResponse": {
+      "properties": {
+        "message": {
+          "type": "string"
+        },
+        "data": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/space"
+          }
+        }
+      }
+    }
+  }
+}
