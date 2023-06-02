@@ -42,3 +42,5 @@ class SignupValidator {
     }
   }
 }
+'Each validation method uses a try-catch block to create an instance of a domain class that represents the corresponding input field, such as Username, Password, FullName, or ConfirmPassword. 
+If an exception is thrown during the creation of the domain object, the catch block returns the error message as a string.'
