@@ -6,7 +6,7 @@ import '../../../domain/auth/user_name_domain.dart';
 import '../../../infrastructure/auth/login_model.dart';
 import '../../../infrastructure/auth/login_data_provider.dart';
 import '../../../infrastructure/auth/login_response_model.dart';
-
+import '../../../data/database_helper.dart'
 class LoginRepo {
   LoginRepo();
   AuthDataProvider authDataProvider = AuthDataProvider();
@@ -18,6 +18,7 @@ class LoginRepo {
     print(loginUser.username);
     print(loginUser.password);
     LoginResponse response = await authDataProvider.login(loginUser);
+    await DatabaseHelper.instance.queryUser(loginDomain.username.toString()); 
     print(response.role);
     LoggedInDomain loggedInDomain = LoggedInDomain(
         token: Token(token: response.token),
